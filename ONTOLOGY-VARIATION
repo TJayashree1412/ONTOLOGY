@@ -1,0 +1,196 @@
+CREATE (Entertainment:Domain {domainName: 'Entertainment'})
+CREATE (Movie:Category {categoryName: 'Movie'})
+CREATE (TVshow:Category {categoryName: 'TV shows'})
+CREATE (Documentary:Category {categoryName: 'Documentary'})
+CREATE (Series:Category {categoryName: 'Series'})
+CREATE (Talkshow:Category {categoryName: 'Reality & Talk shows'})
+CREATE (Action:Genre {genreName: 'Action'})
+CREATE (Thriller:Genre {genreName: 'Thriller & Horror'})
+CREATE (sitcoms:Genre {genreName: 'Comedy'})
+CREATE (Anime:Genre {genreName: 'Anime'})
+CREATE (Romance:Genre {genreName: 'Romance'})
+CREATE (SciFi:Genre {genreName: 'Sci-Fi & Fantasy'})
+CREATE (Drama:Genre {genreName: 'Drama'})
+CREATE (Historical:Genre {genreName: 'Historical'})
+CREATE (Narcos:Topic {topicName: 'Narcos'})
+CREATE (BreakingBad:Topic {topicName: 'Breaking Bad'})
+CREATE (Mirzapur:Topic {topicName: 'Mirzapur'})
+CREATE (Sherlock:Topic {topicName: 'Sherlock'})
+CREATE (Sacredgames:Topic {topicName: 'Sacred games'})
+CREATE (StrangerThings:Topic {topicName: 'Stranger Things'})
+CREATE (Friends:Topic {topicName: 'Friends'})
+CREATE (FamilyGuy:Topic {topicName: 'Family Guy'})
+CREATE (TarakMehta:Topic {topicName: 'Tarak Mehta'})
+CREATE (OnePiece:Topic {topicName: 'One Piece'})
+CREATE (DragonBallZ:Topic {topicName: 'Dragon Ball Z'})
+CREATE (Pokemon:Topic {topicName: 'Pokemon'})
+CREATE (HowIMetYourMother:Topic {topicName: 'How I Met Your Mother'})
+CREATE (LUSTstories:Topic {topicName: 'LUST stories'})
+CREATE (BeautyAndBeast:Topic {topicName: 'Beauty And Beast'})
+CREATE (Arrow:Topic {topicName: 'Arrow'})
+CREATE (BlackMirror:Topic {topicName: 'BlackMirror'})
+CREATE (Heroes:Topic {topicName: 'Heroes'})
+CREATE (KoffeeWithkaran:Topic {topicName: 'Koffee With karan'})
+CREATE (DeathByMagic:Topic {topicName: 'Death By Magic'})
+CREATE (KapilSharmaShow:Topic {topicName: 'Kapil Sharma Show'})
+CREATE (WorldWarII:Topic {topicName: 'World War II in color'})
+CREATE (CountdownToDeath:Topic {topicName: 'Count Down To Death: Paoulo'})
+CREATE (Hollywood :FilmIndustry {industryName: 'Hollywood film'})
+CREATE (Bollywood :FilmIndustry {industryName: 'Bollywood film'})
+CREATE (Gravity:Topic {topicName: 'Gravity'})
+CREATE (PrinceOfPersia:Topic {topicName: 'Prince of Persia'})
+CREATE (Cindrella:Topic {topicName: 'Cindrella'})
+CREATE (Cars:Topic {topicName: 'Cars'})
+CREATE (StuartLittle:Topic {topicName: 'Stuart Little'})
+CREATE (DoctorStrange:Topic {topicName: 'Doctor Strange'})
+CREATE (FAF:Topic {topicName: 'Fast & Furious'})
+CREATE (MI:Topic {topicName: 'Mission Impossible'})
+CREATE (LincolnLawyer:Topic {topicName: 'Lincoln Lawyer'})
+CREATE (TheWalk:Topic {topicName: 'The Walk'})
+CREATE (DeathNote:Topic {topicName: 'Death Note'})
+CREATE (Dictator:Topic {topicName: 'Dictator'})
+CREATE (Ted:Topic {topicName: 'Ted'})
+CREATE (Baahubali:Topic {topicName: 'Baahubali'})
+CREATE (Race2:Topic {topicName: 'Race2'})
+CREATE (ChennaiExpress:Topic {topicName: 'Chennai Express'})
+CREATE (Piku:Topic {topicName: 'Piku'})
+CREATE (OMG:Topic {topicName: 'Oh My God'})
+CREATE (LunchBox:Topic {topicName: 'LunchBox'})
+CREATE (Rustom:Topic {topicName: 'Rustom'})
+CREATE (Drishyam:Topic {topicName: 'Drishyam'})
+CREATE (MohenjoDaro:Topic {topicName: 'Mohenjo Daro'})
+CREATE (BajiraoMastani:Topic {topicName: 'BajiraoMastani'})
+CREATE (JodhaAkbar:Topic {topicName: 'JodhaAkbar'})
+CREATE (DDLJ:Topic {topicName: 'Dilwale Dulhaniya Le Jayenge'})
+CREATE (Ashiqui2:Topic {topicName: 'Ashiqui 2'})
+CREATE (APGK:Topic {topicName: 'Ajab Prem Ki Ghazab Kahani'})
+
+CREATE
+(Movie)-[:is_type_of]->(Entertainment),
+(TVshow)-[:is_type_of]->(Entertainment),
+(Documentary)-[:subCategory_of]->(TVshow),
+(Series)-[:subCategory_of]->(TVshow),
+(Talkshow)-[:subCategory_of]->(TVshow),
+(KapilSharmaShow)-[:is_a]->(Talkshow),
+(DeathByMagic)-[:is_a]->(Talkshow),
+(KoffeeWithkaran)-[:is_a]->(Talkshow),
+(CountdownToDeath)-[:is_a]->(Documentary),
+(WorldWarII)-[:is_a]->(Documentary),
+(Narcos)-[:type_of]->(Action),
+(BreakingBad)-[:type_of]->(Action),
+(Mirzapur)-[:type_of]->(Action),
+(DoctorStrange)-[:type_of]->(Action),
+(FAF)-[:type_of]->(Action),
+(MI)-[:type_of]->(Action),
+(Baahubali)-[:type_of]->(Action),
+(Race2)-[:type_of]->(Action),
+(Sherlock)-[:type_of]->(Thriller),
+(Sacredgames)-[:type_of]->(Thriller),
+(StrangerThings)-[:type_of]->(Thriller),
+(LincolnLawyer)-[:type_of]->(Thriller),
+(TheWalk)-[:type_of]->(Thriller),
+(DeathNote)-[:type_of]->(Thriller),
+(Friends)-[:type_of]->(sitcoms),
+(TarakMehta)-[:type_of]->(sitcoms),
+(FamilyGuy)-[:type_of]->(sitcoms),
+(Dictator)-[:type_of]->(sitcoms),
+(Ted)-[:type_of]->(sitcoms),
+(ChennaiExpress)-[:type_of]->(sitcoms),
+(Piku)-[:type_of]->(sitcoms),
+(OMG)-[:type_of]->(sitcoms),
+(HowIMetYourMother)-[:type_of]->(Romance),
+(LUSTstories)-[:type_of]->(Romance),
+(BeautyAndBeast)-[:type_of]->(Romance),
+(DDLJ)-[:type_of]->(Romance),
+(Ashiqui2)-[:type_of]->(Romance),
+(APGK)-[:type_of]->(Romance),
+(OnePiece)-[:type_of]->(Anime),
+(DragonBallZ)-[:type_of]->(Anime),
+(Pokemon)-[:type_of]->(Anime),
+(Cindrella)-[:type_of]->(Anime),
+(Cars)-[:type_of]->(Anime),
+(StuartLittle)-[:type_of]->(Anime),
+(BlackMirror)-[:type_of]->(SciFi),
+(Heroes)-[:type_of]->(SciFi),
+(Arrow)-[:type_of]->(SciFi),
+(Gravity)-[:type_of]->(SciFi),
+(PrinceOfPersia)-[:type_of]->(SciFi),
+(LunchBox)-[:type_of]->(Drama),
+(Rustom)-[:type_of]->(Drama),
+(Drishyam)-[:type_of]->(Drama),
+(MohenjoDaro)-[:type_of]->(Historical),
+(BajiraoMastani)-[:type_of]->(Historical),
+(JodhaAkbar)-[:type_of]->(Historical),
+(Narcos)-[:is_a]->(Series),
+(BreakingBad)-[:is_a]->(Series),
+(Mirzapur)-[:is_a]->(Series),
+(DoctorStrange)-[:is_a]->(Movie),
+(FAF)-[:is_a]->(Movie),
+(MI)-[:is_a]->(Movie),
+(Baahubali)-[:is_a]->(Movie),
+(Race2)-[:is_a]->(Movie),
+(DoctorStrange)-[:is_from]->(Hollywood),
+(FAF)-[:is_from]->(Hollywood),
+(MI)-[:is_from]->(Hollywood),
+(Baahubali)-[:is_from]->(Bollywood),
+(Race2)-[:is_from]->(Bollywood),
+(Sherlock)-[:is_a]->(Series),
+(Sacredgames)-[:is_a]->(Series),
+(StrangerThings)-[:is_a]->(Series),
+(LincolnLawyer)-[:is_a]->(Movie),
+(TheWalk)-[:is_a]->(Movie),
+(DeathNote)-[:is_a]->(Movie),
+(LincolnLawyer)-[:is_from]->(Hollywood),
+(TheWalk)-[:is_from]->(Hollywood),
+(DeathNote)-[:is_from]->(Hollywood),
+(Friends)-[:is_a]->(Series),
+(TarakMehta)-[:is_a]->(Series),
+(FamilyGuy)-[:is_a]->(Series),
+(Dictator)-[:is_a]->(Movie),
+(Ted)-[:is_a]->(Movie),
+(ChennaiExpress)-[:is_a]->(Movie),
+(Piku)-[:is_a]->(Movie),
+(OMG)-[:is_a]->(Movie),
+(Dictator)-[:is_from]->(Hollywood),
+(Ted)-[:is_from]->(Hollywood),
+(ChennaiExpress)-[:is_from]->(Bollywood),
+(Piku)-[:is_from]->(Bollywood),
+(OMG)-[:is_from]->(Bollywood),
+(HowIMetYourMother)-[:is_a]->(Series),
+(LUSTstories)-[:is_a]->(Series),
+(BeautyAndBeast)-[:is_a]->(Series),
+(DDLJ)-[:is_a]->(Movie),
+(Ashiqui2)-[:is_a]->(Movie),
+(APGK)-[:is_a]->(Movie),
+(DDLJ)-[:is_from]->(Bollywood),
+(Ashiqui2)-[:is_from]->(Bollywood),
+(APGK)-[:is_from]->(Bollywood),
+(OnePiece)-[:is_a]->(Series),
+(DragonBallZ)-[:is_a]->(Series),
+(Pokemon)-[:is_a]->(Series),
+(Cindrella)-[:is_from]->(Hollywood),
+(Cars)-[:is_from]->(Hollywood),
+(StuartLittle)-[:is_from]->(Hollywood),
+(Cindrella)-[:is_a]->(Movie),
+(Cars)-[:is_a]->(Movie),
+(StuartLittle)-[:is_a]->(Movie),
+(BlackMirror)-[:is_a]->(Series),
+(Heroes)-[:is_a]->(Series),
+(Arrow)-[:is_a]->(Series),
+(Gravity)-[:is_a]->(Movie),
+(PrinceOfPersia)-[:is_a]->(Movie),
+(LunchBox)-[:is_a]->(Movie),
+(Rustom)-[:is_a]->(Movie),
+(Drishyam)-[:is_a]->(Movie),
+(MohenjoDaro)-[:is_a]->(Movie),
+(BajiraoMastani)-[:is_a]->(Movie),
+(JodhaAkbar)-[:is_a]->(Movie),
+(Gravity)-[:is_from]->(Hollywood),
+(PrinceOfPersia)-[:is_from]->(Hollywood),
+(LunchBox)-[:is_from]->(Bollywood),
+(Rustom)-[:is_from]->(Bollywood),
+(Drishyam)-[:is_from]->(Bollywood),
+(MohenjoDaro)-[:is_from]->(Bollywood),
+(BajiraoMastani)-[:is_from]->(Bollywood),
+(JodhaAkbar)-[:is_from]->(Bollywood);
+
