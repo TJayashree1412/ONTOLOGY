@@ -1,12 +1,13 @@
 CREATE (Entertainment:Domain {domainName: 'Entertainment'})
+
 CREATE (Movie:Category {categoryName: 'Movie'})
-CREATE (TVshow:Category {categoryName: 'TV shows'})
-CREATE (Documentary:Category {categoryName: 'Documentary'})
 CREATE (Series:Category {categoryName: 'Series'})
-CREATE (Talkshow:Category {categoryName: 'Reality & Talk shows'})
+
+CREATE (Documentary:Genre {genreName: 'Documentary'})
+CREATE (Talkshow:Genre {genreName: 'Reality & Talk shows'})
 CREATE (Action:Genre {genreName: 'Action'})
 CREATE (Thriller:Genre {genreName: 'Thriller & Horror'})
-CREATE (sitcoms:Genre {genreName: 'Comedy'})
+CREATE (comedy:Genre {genreName: 'Comedy'})
 CREATE (Anime:Genre {genreName: 'Anime'})
 CREATE (Romance:Genre {genreName: 'Romance'})
 CREATE (SciFi:Genre {genreName: 'Sci-Fi & Fantasy'})
@@ -65,15 +66,13 @@ CREATE (APGK:Topic {topicName: 'Ajab Prem Ki Ghazab Kahani'})
 
 CREATE
 (Movie)-[:is_type_of]->(Entertainment),
-(TVshow)-[:is_type_of]->(Entertainment),
-(Documentary)-[:subCategory_of]->(TVshow),
-(Series)-[:subCategory_of]->(TVshow),
-(Talkshow)-[:subCategory_of]->(TVshow),
-(KapilSharmaShow)-[:is_a]->(Talkshow),
-(DeathByMagic)-[:is_a]->(Talkshow),
-(KoffeeWithkaran)-[:is_a]->(Talkshow),
-(CountdownToDeath)-[:is_a]->(Documentary),
-(WorldWarII)-[:is_a]->(Documentary),
+(Series)-[:is_type_of]->(Entertainment),
+
+(KapilSharmaShow)-[:type_of]->(Talkshow),
+(DeathByMagic)-[:type_of]->(Talkshow),
+(KoffeeWithkaran)-[:type_of]->(Talkshow),
+(CountdownToDeath)-[:type_of]->(Documentary),
+(WorldWarII)-[:type_of]->(Documentary),
 (Narcos)-[:type_of]->(Action),
 (BreakingBad)-[:type_of]->(Action),
 (Mirzapur)-[:type_of]->(Action),
@@ -88,14 +87,14 @@ CREATE
 (LincolnLawyer)-[:type_of]->(Thriller),
 (TheWalk)-[:type_of]->(Thriller),
 (DeathNote)-[:type_of]->(Thriller),
-(Friends)-[:type_of]->(sitcoms),
-(TarakMehta)-[:type_of]->(sitcoms),
-(FamilyGuy)-[:type_of]->(sitcoms),
-(Dictator)-[:type_of]->(sitcoms),
-(Ted)-[:type_of]->(sitcoms),
-(ChennaiExpress)-[:type_of]->(sitcoms),
-(Piku)-[:type_of]->(sitcoms),
-(OMG)-[:type_of]->(sitcoms),
+(Friends)-[:type_of]->(comedy),
+(TarakMehta)-[:type_of]->(comedy),
+(FamilyGuy)-[:type_of]->(comedy),
+(Dictator)-[:type_of]->(comedy),
+(Ted)-[:type_of]->(comedy),
+(ChennaiExpress)-[:type_of]->(comedy),
+(Piku)-[:type_of]->(comedy),
+(OMG)-[:type_of]->(comedy),
 (HowIMetYourMother)-[:type_of]->(Romance),
 (LUSTstories)-[:type_of]->(Romance),
 (BeautyAndBeast)-[:type_of]->(Romance),
@@ -163,5 +162,10 @@ CREATE
 (Drishyam)-[:is_a]->(Movie),
 (MohenjoDaro)-[:is_a]->(Movie),
 (BajiraoMastani)-[:is_a]->(Movie),
-(JodhaAkbar)-[:is_a]->(Movie);
+(JodhaAkbar)-[:is_a]->(Movie),
+(KapilSharmaShow)-[:is_a]->(Series),
+(DeathByMagic)-[:is_a]->(Series),
+(KoffeeWithkaran)-[:is_a]->(Series),
+(CountdownToDeath)-[:is_a]->(Series),
+(WorldWarII)-[:is_a]->(Series);
 
